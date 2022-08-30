@@ -1,0 +1,66 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = (event) => {
+      var popupWindow = window.open(
+      chrome.extension.getURL("window.html"),
+      "exampleName",
+      "width=400,height=400"
+      );
+      window.close();
+    };
+  </script>
+</head>
+<body id="body">
+  
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang= "ja">
+<head>
+    <meta name= "viewport" content= "width=device-width, initial-scale= 1.0">
+    <meta http-equiv= "content-type" charset= "utf-8">
+    <title>ToDoApp</title>
+</head>
+<body>
+    <h1>ToDoアプリ</h1>
+    
+    <section class= "main">
+        <h2>ToDoAppに投稿する</h2>
+
+        <!--投稿-->
+        <form method= "post">
+            <input type= "text" name= "txt">
+            <input type= "submit" value= "投稿">
+        </form>    
+
+        <table style= "border-collapse: collapse">
+        <!--tableの中でtr部分をループ-->
+        <?php foreach((array)$BOARD as $DATA): ?>
+        <tr>
+        <form method= "post">
+            <td>
+                <!--テキスト-->
+                <?php echo h($DATA[2]); ?>
+            </td>
+            <td>
+                <!--日時-->
+                <?php echo $DATA[1]; ?>
+            </td>
+            <td>
+                <!--削除-->
+　　　　　　　　　<!--この時その投稿のidがサーバーに送信される-->
+                <input type= "hidden" name= "del" value= "<?php echo $DATA[0]; ?>">
+                <input type= "submit" value= "削除">
+            </td>
+        </form>
+        </tr>
+        <?php endforeach; ?>
+        </table>
+    </section>

@@ -1,0 +1,211 @@
+/* Popup Window */
+body {
+  width: 340px;
+  height: 300px;
+  max-height: 340px;
+  /* font-family: 'Roboto'; */
+}
+
+
+.logo{
+  width: 70px;
+  height: 26px;
+  left: 300px;
+  top: 10px;
+  padding: 10px;
+  margin-right: 21px;
+
+  /* font-family: 'Roboto'; */
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+}
+
+ /* Month, Date, Day */
+.parent {
+  position: relative;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.date {
+  font-size: 32px;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 0;
+  margin-left: 21px;
+}
+
+.day {
+  font-size: 20px;
+  margin-top: 5px;
+  margin-left: 30px;
+  font-weight: 100;
+}
+
+/* --------------------- */
+
+div {
+  position: relative;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 8px;
+  list-style-type: none;
+  /* background: #eee; */
+  font-size: 18px;
+  transition: 0.2s;
+  display: flex;
+  flex-direction: row;
+  
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+/* ul li:nth-child(odd) {
+  background: #f9f9f9;
+} */
+
+/* Darker background-color on hover */
+ul li:hover {
+  /* background: #ddd; */
+}
+
+/* When clicked on, add a background color and strike out text */
+/* ul li.checked {
+  background: #BFD9F1;
+  color: #fff;
+  text-decoration: line-through;
+  border: none;
+}
+
+/* Add a "checked" mark when clicked on */
+/*ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+
+  border: none;
+} */
+
+input[type="checkbox"] {
+  /* position: absolute; */
+  appearance: none;
+
+  text-align: center;
+  left: 8px;
+  width: 18px;
+  height: 18px;
+
+  border: none;
+}
+
+input[type="checkbox"]::before {
+  position: absolute;
+  
+  text-align: center;
+  left: 8px;
+  width: 18px;
+  height: 18px;
+
+  /* border: 1px solid #eee; */
+  background: #D9D9D9;
+  content: "";
+  transition: all 0.3s;
+
+}
+
+input[type="checkbox"]:checked {
+  /* position: absolute; */
+  text-align: center;
+  left: 8px;
+  width: 18px;
+  height: 18px;
+  content: "";
+
+  background: #BFD9F1;
+  content: "";
+}
+
+input[type="checkbox"]:checked::before {
+
+  /* border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+
+  border: none; */
+    background: black;
+    content: '';
+    display: block;
+    height: 7px;
+    left: 8px;
+    margin-top: -7px;
+    top: 50%;
+    transform: rotate(45deg);
+    width: 5px;
+}
+
+.inputbox {
+  /* position: absolute; */
+  width: 250px;
+  height: 18px;
+  left: 68px;
+  top: 92px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  font-size: 17px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  color: #000000;
+}
+
+/* Style the close button */
+.Cross {
+  display: none;
+}
+
+ul li:hover + .Cross {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0; 
+  padding: 12px 16px 12px 16px;
+  color: black;
+}
