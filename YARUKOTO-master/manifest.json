@@ -1,0 +1,12 @@
+{
+    "name": "YARUKOTO",
+	"manifest_version": 3,
+	"version": "0.1",
+  
+	"permissions": ["tabs"],
+	"action": {
+    "default_popup": "window.html",
+    "default_icon": "img/tasks.png",
+    "default_title": "YARUKOTO"
+  }
+}
