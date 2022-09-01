@@ -1,0 +1,329 @@
+/* Variables */
+:root {
+	--background: white;
+
+	--submit: lightblue;
+
+	--item_back: white;
+	--bubble: #D9D9D9;
+	--bubble-after: #A8D3FB;
+
+	--underline: #BFD9F1;
+
+	--button: #D9D9D9;
+	--button-hover: #000;
+}
+
+/* Resets */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'montserrat', sans-serif;
+}
+
+
+body {
+	cursor: default;
+	background: var(--background);
+	max-width: 400px;
+	margin: 1rem 1rem 1rem 1rem;
+	/* width: 340px;  */
+  height: 340px;
+}
+
+/* .app {
+	margin: 10px 10px 10px 10px;
+} */
+
+h3 {
+	font-size: 1.125rem;
+}
+
+/* ==================== Create new task ==================== */
+.create-todo input[type="text"] {
+	display: block;
+	width: 100%;
+	font-size: 1.1rem;
+	padding: 0.5rem 0.8rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+
+	/* border-radius: 0.5rem; */
+	background-color: white;
+	cursor: text;
+	border-top: hidden;
+	border-right: hidden;
+	border-left: hidden;
+	border-color: var(--underline);
+
+}
+
+/* submit button */
+/* .create-todo input[type="submit"] {
+	display: block;
+	width: 100%;
+	font-size: 1.125rem;
+	padding: 0.5rem 0.5rem;
+	margin-bottom: 1rem;
+	cursor:pointer;
+	color: #fff;
+	background-color: var(--submit);
+} */
+
+/* .create-todo input[type="submit"]:hover {
+	opacity: 0.75;
+} */
+
+
+/* ==================== Todo list ==================== */
+
+.todo-list .list {
+	width: 100%;
+}
+
+/* ==================== item ==================== */
+.list .item {
+	display: flex;
+	align-items: center;
+	padding: 0.5rem;
+	margin-bottom: 0.5rem;
+
+	justify-content: space-between;
+	background-color: var(--item_back);
+}
+
+/* ========== checkbox ========== */
+.item label {
+	display: inline-block;
+	margin-right: 10px;
+	cursor: pointer;
+	-webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+/* Custom checkbox */
+.bubble {
+	display: flex;
+	align-items: center;
+	width: 20px;
+	height: 20px;
+	background-color: var(--bubble);
+	cursor:pointer;
+}
+
+/* label input:checked ~ .bubble {
+	background-color: var(--bubble-after);
+} */
+
+label input:checked ~ .bubble #blue {
+	background-color: #BFD9F1;
+}
+
+label input:checked ~ .bubble #red {
+	background-color: #f1bfbf;
+}
+
+label input:checked ~ .bubble #green {
+	background-color: #c5f1bf;
+}
+
+.bubble:after {
+	content: "";
+  position: absolute;
+  display: none;
+}
+
+label input:checked ~ .bubble::after {
+	display:block;
+}
+
+label .bubble::after {
+	margin-left: 4.5px;
+	margin-bottom: 5px;
+  width: 8px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* ========== input box ========== */
+.item .todo-content {
+	margin: 0;
+	padding: 0;
+	margin-right: 10px;
+}
+
+.item .todo-content input {
+	font-size: 1.1rem;
+	padding: 0.2rem 0.2rem;
+	width:13.5rem;
+	/* border-color: var(--underline); */
+	border-top: hidden;
+	border-right: hidden;
+	border-left: hidden;
+}
+
+/* ========== color buttons ========== */
+input[type="radio"] {
+	display: none;
+}
+
+.bubble2 {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 20px;
+	height: 20px;
+	cursor:pointer;
+}
+
+#color-red {
+	background-color: #f1bfbf;
+}
+
+#color-blue {
+	background-color: #BFD9F1;
+}
+
+#color-green {
+	background-color: #c5f1bf;
+}
+
+.bubble2:after {
+	content: "";
+  position: absolute;
+  display: none;
+}
+
+label input:checked ~ .bubble2::after {
+	display:block;
+}
+
+label .bubble2::after {
+	margin-left: 4.5px;
+	margin-bottom: 5px;
+  width: 8px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+label input:checked ~ #color-red {
+	background-color: #f1bfbf;
+}
+
+label input:checked ~ #color-blue {
+	background-color: #BFD9F1;
+}
+label input:checked ~ #color-green {
+	background-color: #c5f1bf;
+}
+
+/* ========== Buttons ========== */
+.item .actions {
+	/* position: relative; */
+	width: auto;
+	display: flex;
+	padding-right: 10px;
+	justify-content:space-around
+}
+
+button {
+	border: none;
+	text-decoration: none;
+	cursor:pointer;
+}
+
+.item .edit {
+	display: inline-block;
+	border: 2px solid var(--button);
+	background-color: var(--background);
+	color: var(--button);
+	/* min-width: 40px; */
+	width: 3rem; 
+	height: 28px;
+}
+
+.item .edit:hover {
+	display: inline-block;
+	border: 2px solid var(--button-hover);
+	background-color: var(--background);
+	color: var(--button-hover);
+	/* min-width: 40px; */
+	width: 3rem; 
+	height: 28px;
+
+	cursor: pointer;
+}
+
+
+/* removeButton */
+.item .delete {
+	appearance: none;
+	color: var(--button);
+	background-color: white;
+	width: 2.5rem;
+}
+
+.item .delete:hover {
+	display: inline-block;
+	color: var(--button-hover);
+	/* min-width: 40px; */
+
+	cursor: pointer;
+}
+
+/* ==================== item end ==================== */
+
+/* ========== Header (Date, Logo) ========== */
+.parent {
+	width: 100%;
+  position: relative;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo{
+  margin-right: 1rem;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+}
+
+.date {
+  font-size: 2rem;
+  font-weight: 400;
+
+  margin-top: 1rem;
+  margin-bottom: 0;
+  margin-left: 1rem;
+}
+
+.day {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  margin-left: 1.65rem;
+  font-weight: 100;
+}
+
+/* Logo and Date end */
