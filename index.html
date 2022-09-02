@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YARUKOTO</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<!-- App Wrapper -->
+	<main class="app">
+    <!-- Date and logo -->
+		<section class="parent">
+      <section>
+        <p id="date" class="date"></p>
+        <p id="day" class="day"></p>
+      </section>
+      <p class="logo">YARUKOTO</p>
+    </section>
+
+		<!-- New Todo -->
+		<section class="create-todo">
+			<!-- <h3>CREATE A TODO</h3> -->
+			<form id="todos">
+				<input 
+					type="text" 
+					placeholder="Add new task here + Enter"
+					name="content"
+					id="content" />
+
+					<div id="color-button" class="color-button">
+						<label>
+							<input type="radio" name="color" value="blue" checked><span class="bubble2" id="color-blue"></span>
+						</label>
+						<label>	
+							<input type="radio" name="color" value="red"><span class="bubble2" id="color-red"></span>
+						</label>
+						<label>
+							<input type="radio"name="color" value="green"><span class="bubble2" id="color-green"></span>
+						</label>
+					</div>
+
+				<!-- <input type="submit" value="Add todo" /> -->
+			</form>
+		</section>
+		<!-- End of New Todo -->
+
+		<!-- Todo List -->
+		<section class="todo-list">
+			<h3>TODO LIST</h3>
+			<div class="list" id="todo-list"></div>
+		</section>
+		<!-- End of Todo List -->
+
+	</main>
+	<!-- End of App Wrapper -->
+
+	<!-- JS Import -->
+  <script src="js/date.js"></script>
+	<script src="js/todo.js"></script>
+	<!-- End of JS Import -->
+<body>
+</html>
