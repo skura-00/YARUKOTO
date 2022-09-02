@@ -23,9 +23,15 @@
 		<section class="create-todo">
 			<!-- <h3>CREATE A TODO</h3> -->
 			<form id="todos">
-				<input 
+				<!-- Temporary -->
+				<div>
+					<input type="date" name="day">
+				</div>
+
+				<div class="input-container">
+					<input 
 					type="text" 
-					placeholder="Add new task here + Enter"
+					placeholder="Add new task here"
 					name="content"
 					id="content" />
 
@@ -40,8 +46,9 @@
 							<input type="radio"name="color" value="green"><span class="bubble2" id="color-green"></span>
 						</label>
 					</div>
-
-				<!-- <input type="submit" value="Add todo" /> -->
+				</div>
+			
+				<input type="submit" value="Add todo" />
 			</form>
 		</section>
 		<!-- End of New Todo -->

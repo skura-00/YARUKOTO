@@ -15,7 +15,8 @@ window.addEventListener('load', () => {
       // Text value, Done
       content: e.target.elements.content.value,
       done: false,
-      color: e.target.elements.color.value
+      color: e.target.elements.color.value,
+      date: e.target.elements.day.value
     }
 
     tasks.push(newTodo);
@@ -34,16 +35,26 @@ window.addEventListener('load', () => {
 function Sort() {
   const list = document.querySelector('#todo-list');
   list.innerHTML = "";
-
+  const today = new Date();
+  const str1 = today.getFullYear() +'/'+ (today.getMonth()+1) +'/'+ today.getDate();
+  // console.log(str1);
   // Display unchecked items
+  let str2; 
   tasks.forEach(task => {
-    if(!task.done) {
+    const day = new Date(task.date);
+    if(day != "NaN/NaN/NaN")
+      str2 = day.getFullYear() +'/'+ (day.getMonth()+1) +'/'+ (day.getDate()+1);
+    console.log(str2);
+    if((str2 == "NaN/NaN/NaN" || str1 == str2) && !task.done) {
       Display(list, task);
     }
   });
   // Display checked items
   tasks.forEach(task => {
-    if(task.done) {
+    const day = new Date(task.date);
+    if(day != "NaN/NaN/NaN")
+      str2 = day.getFullYear() +'/'+ (day.getMonth()+1) +'/'+ (day.getDate()+1);
+    if((str2 == "NaN/NaN/NaN" || str1 == str2) && task.done) {
       Display(list, task);
     }
   });
