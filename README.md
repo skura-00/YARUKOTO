@@ -32,6 +32,8 @@ The user can also edit and delete the task.
 4. Install YARUKOTO 
 <img width="557" alt="Step3" src="https://user-images.githubusercontent.com/105990444/188284189-d5499bc9-dc9c-4057-845b-7b7a68b71107.png">
 <img width="604" alt="Srep4" src="https://user-images.githubusercontent.com/105990444/188284194-e639cc50-6167-4987-b617-0cb861d321d9.png">
+5. Installed!
+<img width="449" alt="Step5" src="https://user-images.githubusercontent.com/105990444/188284271-4c3fd32e-cf32-439b-b052-64ccbdc124f8.png">
 
 <!-- * Step-by-step bullets
 ```
